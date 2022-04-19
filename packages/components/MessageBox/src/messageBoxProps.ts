@@ -13,6 +13,10 @@ export const messageBoxProps = {
     type: String,
     default: ''
   },
+  isDel: {
+    type: Boolean,
+    default: false
+  },
   callback: {
     type: Function,
     default: () => ({})
@@ -38,7 +42,7 @@ export interface ICacheMessageBoxInstance<T = { el: HTMLDivElement }> {
 export type IMessageBoxProps = ExtractPropTypes<typeof messageBoxProps>
 
 export interface IAlert {
-  (message: string, title: string, options: Partial<IMessageBoxProps>): void
+  (message: string, title: string, options: Partial<IMessageBoxProps>, isDel: boolean): void
 }
 export interface IMessageBoxInstance {
   alert?: IAlert

@@ -9,7 +9,7 @@ import {
 } from 'vue'
 import { messageProps } from './messageProps'
 import { useNamespace } from '@vu-design/hooks'
-import { addUnit, isUndefined, styleCommonPrefix } from '@vu-design/utils'
+import { addUnit, styleCommonPrefix } from '@vu-design/utils'
 import useZIndex from '@vu-design/hooks/use-zindex'
 import computedClassName from '@vu-design/hooks/use-class-name'
 
@@ -29,7 +29,6 @@ export default defineComponent({
     const styles = computed<CSSProperties>(() => ({
       ...props.style,
       top: addUnit(props!.offset),
-      width: isUndefined(props.width) ? undefined : addUnit(props.width),
       zIndex
     }))
     const icon = computed<string>(() => `vu-icon vu-icon-${props.icon}`)
@@ -40,7 +39,7 @@ export default defineComponent({
      * @description 点击弹窗关闭事件
      */
     const closeMessageHandle = () => {
-      // showFlag.value = false
+      showFlag.value = false
     }
 
     onMounted(() => {

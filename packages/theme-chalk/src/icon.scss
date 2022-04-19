@@ -11,9 +11,9 @@
 
 @font-face {
   font-family: 'vu-ui-icons'; /* Project id 3227008 */
-  src: url('fonts/iconfont.woff2?t=1650351806913') format('woff2'),
-    url('fonts/iconfont.woff?t=1650351806913') format('woff'),
-    url('fonts/iconfont.ttf?t=1650351806913') format('truetype');
+  src: url('fonts/iconfont.woff2?t=1650352952518') format('woff2'),
+    url('fonts/iconfont.woff?t=1650352952518') format('woff'),
+    url('fonts/iconfont.ttf?t=1650352952518') format('truetype');
 }
 
 [class^='#{$namespace}-icon'],
@@ -23,6 +23,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.vu-icon-jinggao:before {
+  content: '\ec72';
 }
 
 .vu-icon-yooxi:before {
@@ -79,7 +83,7 @@
 }
 
 .vu-icon-danger:before {
-  content: "\e8c5";
+  content: '\e8c5';
 }
 
 .vu-icon-info:before {

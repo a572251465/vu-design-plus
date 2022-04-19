@@ -1,17 +1,12 @@
 import { createVNode, nextTick, render } from 'vue'
 import messageBoxInstance from './messageBox.vue'
-import {
-  IAlert,
-  ICacheMessageBoxInstance,
-  IMessageBoxInstance,
-  IMessageBoxProps
-} from './messageBoxProps'
+import { IAlert, ICacheMessageBoxInstance } from './messageBoxProps'
 import messageBox from './messageBox.vue'
 
 let messageBoxId = 0
 const cacheMessageBoxInstance: ICacheMessageBoxInstance = {}
 
-const MessageBox: IAlert = (message, title, options = {}) => {
+const MessageBox: IAlert = (message, title, options = {}, isDel) => {
   options.message = message
   options.title = title
 
@@ -30,6 +25,9 @@ const MessageBox: IAlert = (message, title, options = {}) => {
   }
   options = {
     ...options,
+    isDel,
+    cancelButtonText: isDel ? '取消' : '确定',
+    confirmButtonText: isDel ? '删除' : '取消',
     callback: async () => {
       await commonCallback()
       userCallback()
@@ -47,7 +45,7 @@ const MessageBox: IAlert = (message, title, options = {}) => {
 }
 
 // ------------------------- 单独设置alert属性 ----------------------
-;(['alert'] as const).forEach((classify) => {
+;(['danger', 'delete'] as const).forEach((classify) => {
   messageBox[classify] = function (message, title, options = {}) {
     // 如果htmlTpl 存在的话 message可以不存在
     if (title && typeof title === 'object') {
@@ -55,7 +53,7 @@ const MessageBox: IAlert = (message, title, options = {}) => {
       title = message
       message = ''
     }
-    return MessageBox(message, title, options)
+    return MessageBox(message, title, options, classify === 'delete')
   }
 })
 

@@ -34,6 +34,8 @@ export default defineComponent({
 
     // 表示html模板
     const computedHtml = computed(() => props.htmlTpl)
+    // 表示是否是删除用弹框
+    const isDel = computed(() => props.isDel)
 
     onMounted(() => (changeValue.value = true))
 
@@ -43,6 +45,7 @@ export default defineComponent({
       popupBtnHandle,
       onClose,
       computedHtml,
+      isDel,
       computedClass: computedClassName('vu-message-box')
     }
   }
@@ -53,27 +56,23 @@ export default defineComponent({
   <transition name="vu-message-box-fade" @after-leave="onClose">
     <VuMark :z-index="maskZIndex" v-show="changeValue" :center="true">
       <div class="vu-message-box">
-        <div :class="computedClass(['header'])">
-          <span>{{ title }}</span>
-          <i class="vu-icon vu-icon-close" @click="popupBtnHandle('fail')"></i>
-        </div>
-        <div v-if='!htmlTpl' :class="computedClass(['body'])">
-          {{ message }}
-        </div>
-        <div v-else :class="computedClass(['body'])">
-          <div v-html='htmlTpl'></div>
+        <div :class="computedClass(['body'])">
+          <i class="vu-icon vu-icon-jinggao body-left"></i>
+          <div class="body-right" v-if="computedHtml" v-html="htmlTpl"></div>
+          <div class="body-right" v-else>{{ message }}</div>
         </div>
         <div :class="computedClass(['footer'])">
           <button
-            :class="computedClass(['footer', 'btn'])"
-            @click="popupBtnHandle('success')"
+            class="vu-message-box__footer__btn"
+            :class="isDel ? 'delete-sure' : ''"
+            @click="popupBtnHandle(isDel ? 'success' : 'fail')"
           >
             {{ confirmButtonText }}
           </button>
           <button
-            :class="computedClass(['footer', 'btn'])"
-            @click="popupBtnHandle('fail')"
-            class="cancel"
+            class="vu-message-box__footer__btn"
+            :class="isDel ? 'delete-cancel' : 'danger-sure'"
+            @click="popupBtnHandle(isDel ? 'fail' : 'success')"
           >
             {{ cancelButtonText }}
           </button>
