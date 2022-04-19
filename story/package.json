@@ -1,0 +1,13 @@
+{
+  "name": "@vu-design/story",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.4",
+    "vite": "^2.8.6"
+  }
+}

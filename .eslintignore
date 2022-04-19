@@ -1,0 +1,12 @@
+node_modules
+dist
+*.css
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.d.ts
+*.scss
+*.woff2
+*.ttf
+*.woff

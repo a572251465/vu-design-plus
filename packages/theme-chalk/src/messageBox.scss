@@ -1,0 +1,127 @@
+@use './mixins/mixins' as *;
+@use './mixins/public' as *;
+
+@include b(message-box) {
+  width: 617px;
+  height: auto;
+  background: linear-gradient(
+    180deg,
+    #3d4962 0%,
+    #454f63 19%,
+    #3b4252 49%,
+    #49515f 80%,
+    #4a5363 100%
+  );
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  padding: 0 19px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #ffffff;
+
+  @include e(header) {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+
+    i {
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+
+  @include e(body) {
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  @include e(footer) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+
+    @include e(btn) {
+      width: 118px;
+      height: 35px;
+      background: #ff8002;
+      opacity: 0.7;
+      border-radius: 17px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 35px;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      color: #ffffff;
+    }
+
+    .cancel {
+      border: 1px solid #ffffff;
+      background: transparent;
+      margin-left: 59px;
+    }
+  }
+}
+
+@keyframes message-box-fade-in {
+  0% {
+    transform: translate3d(0, -100px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes message-box-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -100px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.vu-message-box-fade-enter-active {
+  animation: modal-fade-in 0.3s !important;
+
+  .vu-message-box {
+    animation: message-box-fade-in 0.3s;
+  }
+}
+
+.vu-message-box-fade-leave-active {
+  animation: modal-fade-out 0.3s;
+
+  .vu-message-box {
+    animation: message-box-fade-out 0.3s;
+  }
+}

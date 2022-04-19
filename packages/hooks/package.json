@@ -1,0 +1,12 @@
+{
+  "name": "@vu-design/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

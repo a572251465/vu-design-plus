@@ -1,0 +1,31 @@
+{
+  "name": "vu-design",
+  "version": "1.1.0",
+  "description": "A Component Library for Vue 3",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "homepage": "https://github.com/a572251465/vu-design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a572251465/vu-design.git"
+  },
+  "bugs": {
+    "url": "https://github.com/a572251465/vu-design/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "ui",
+    "vue3",
+    "vu",
+    "vu-design"
+  ],
+  "author": "lihh",
+  "license": "MIT",
+  "devDependencies": {
+    "fast-glob": "^3.2.11",
+    "ts-morph": "^14.0.0"
+  }
+}

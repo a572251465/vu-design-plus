@@ -1,0 +1,3 @@
+packages:
+  - 'packages/**' # 存放组件
+  - story # 测试组件

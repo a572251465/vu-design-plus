@@ -1,0 +1,71 @@
+@use 'config' as *;
+@use 'default' as *;
+@forward 'config';
+
+$baseTheme: map-get($theme-default, 'default');
+@function getValueByKey($key) {
+  @if (map-has-key($theme-default, $key)) {
+    @return map-get($theme-default, $key);
+  } @else {
+    @return map-get($baseTheme, $key);
+  }
+}
+
+@mixin b($component) {
+  $B: $namespace + '-' + $component;
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin cPrefix($component, $prefix) {
+  @at-root {
+    &.#{$component}-#{$prefix} {
+      @content;
+    }
+  }
+}
+
+@mixin whenInner($state) {
+  @at-root {
+    .#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
+
+@mixin e($element) {
+  @at-root {
+    #{& + $element-separator + $element} {
+      @content;
+    }
+  }
+}
+
+@mixin colorMixin($component) {
+  @each $key in (success, danger) {
+    $value: getValueByKey(#{$key}) !global;
+    $name: $key !global;
+    @at-root {
+      .#{$namespace}-#{$component}#{$modifier-separator}#{$key} {
+        @content;
+      }
+    }
+  }
+}

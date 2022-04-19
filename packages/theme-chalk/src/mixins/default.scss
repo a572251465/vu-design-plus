@@ -1,0 +1,12 @@
+@import './var.scss';
+
+$theme-default: (
+  'default': (
+    // 颜色相关
+    dark: $--color-dark,
+    success: $--color-success,
+    warning: $--color-warning,
+    danger: $--color-danger,
+    info: $--color-info
+  )
+);

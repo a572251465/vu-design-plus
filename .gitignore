@@ -1,0 +1,6 @@
+node_modules
+dist
+.idea
+packages/**/es
+packages/**/lib
+packages/theme-chalk/dist
