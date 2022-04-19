@@ -1,6 +1,8 @@
 <script lang="ts" setup>
-import { VuMessage, VuMessageBox } from '@vu-design/components'
+import { VuMessage, VuMessageBox, VuDialog } from '@vu-design/components'
+import { ref } from 'vue'
 const btns = ['success', 'danger']
+const dialogShowFlag = ref<boolean>(false)
 
 const clickMessageHandle = (item) => {
   VuMessage[item](`授权失败：授权码错误11111`)
@@ -8,9 +10,13 @@ const clickMessageHandle = (item) => {
 const messageBoxHandle = () => {
   VuMessageBox.delete('请为“系统管理员”角色下的成员创建新角色', '提示', {
     callback: () => {
-       alert('你成功了')
+      alert('你成功了')
     }
   })
+}
+
+const openDialog = () => {
+  dialogShowFlag.value = true
 }
 
 const messageBoxHandle1 = () => {
@@ -47,6 +53,9 @@ const messageBoxHandle1 = () => {
     <div>
       <button @click="messageBoxHandle1">点击 messagebox</button>
     </div>
+    <h1>dialog实现</h1>
+    <button @click="openDialog">点击打开dialog</button>
+    <VuDialog v-model="dialogShowFlag" title="新建部门">11111</VuDialog>
   </div>
 </template>
 
