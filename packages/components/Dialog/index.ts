@@ -1,7 +1,7 @@
 import { withInstall } from '@vu-design/utils/types'
-import VuDialog from './src/index.vue'
+import dialog from './src/index.vue'
 
-const Dialog = withInstall(VuDialog)
+const VuDialog = withInstall(dialog)
 
 export { VuDialog }
-export default Dialog
+export default VuDialog
