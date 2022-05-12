@@ -1,4 +1,4 @@
-import { getConfig } from '@vu-design/utils'
+import { getConfig } from '@vu-design-plus/utils'
 
 const zIndexCache: number[] = []
 

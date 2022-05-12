@@ -29,7 +29,7 @@ const run = async (command) => {
  */
 const pathRewriter = (format) => {
   return (id) => {
-    id = id.replace(/@vu-design/g, `vu-design/${format}`)
+    id = id.replace(/@vu-design-plus/g, `vu-design-plus/${format}`)
     return id
   }
 }

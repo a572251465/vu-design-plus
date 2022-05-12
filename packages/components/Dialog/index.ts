@@ -1,4 +1,4 @@
-import { withInstall } from '@vu-design/utils/types'
+import { withInstall } from '@vu-design-plus/utils/types'
 import dialog from './src/index.vue'
 
 const VuDialog = withInstall(dialog)

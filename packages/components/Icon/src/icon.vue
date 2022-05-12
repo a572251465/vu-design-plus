@@ -1,8 +1,8 @@
 <script lang='ts' setup>
 import { iconProps } from './iconProp'
-import { useNamespace } from '@vu-design/hooks'
+import { useNamespace } from '@vu-design-plus/hooks'
 import { computed, CSSProperties } from 'vue'
-import { addUnit, isUndefined } from '@vu-design/utils'
+import { addUnit, isUndefined } from '@vu-design-plus/utils'
 
 const props = defineProps(iconProps)
 

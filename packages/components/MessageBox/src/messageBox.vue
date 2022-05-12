@@ -1,8 +1,8 @@
 <script lang="ts">
 import { computed, defineComponent, onMounted, ref } from 'vue'
 import { messageBoxProps } from './messageBoxProps'
-import useZIndex from '@vu-design/hooks/use-zindex'
-import computedClassName from '@vu-design/hooks/use-class-name'
+import useZIndex from '@vu-design-plus/hooks/use-zindex'
+import computedClassName from '@vu-design-plus/hooks/use-class-name'
 import VuMark from '../../Mark'
 export default defineComponent({
   name: 'VuMessageBox',

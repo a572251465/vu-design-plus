@@ -31,7 +31,7 @@ const buildEachComponent = async () => {
     const config = {
       input,
       plugins: [nodeResolve(), vue(), typescript(), commonjs()],
-      external: (id) => /^vue/.test(id) || /^@vu-design/.test(id)
+      external: (id) => /^vue/.test(id) || /^@vu-design-plus/.test(id)
     }
     const bundle = await rollup(config)
     const options = Object.values(buildConfig).map((config) => ({
@@ -61,7 +61,7 @@ async function genTypes() {
       outDir: path.resolve(outDir, 'types'),
       baseUrl: projectRoot,
       paths: {
-        '@vu-design/*': ['packages/*']
+        '@vu-design-plus/*': ['packages/*']
       },
       skipLibCheck: true,
       strict: false
@@ -108,7 +108,7 @@ async function genTypes() {
       await fs.mkdir(path.dirname(filepath), {
         recursive: true
       })
-      // @vu-design -> vu-design/es -> .d.ts 肯定不用去lib下查找
+      // @vu-design-plus -> vu-design-plus/es -> .d.ts 肯定不用去lib下查找
       await fs.writeFile(filepath, pathRewriter('es')(outputFile.getText()))
     })
     await Promise.all(tasks)

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { styleCommonPrefix } from '@vu-design/utils'
+import { styleCommonPrefix } from '@vu-design-plus/utils'
 
 export default defineComponent({
   name: 'VuMask',

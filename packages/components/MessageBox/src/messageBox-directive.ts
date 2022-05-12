@@ -16,7 +16,7 @@ const MessageBox: IAlert = (message, title, options = {}, isDel) => {
   el.id = `dialog-popup-${currentMessageBoxId}`
 
   // ---------------------- 进行函数重写  ------------------
-  const userCallback = options.callback!
+  const userCallback = options.callback || Function.prototype
   const commonCallback = async () => {
     const { el } = cacheMessageBoxInstance[currentMessageBoxId]
     render(null, el)

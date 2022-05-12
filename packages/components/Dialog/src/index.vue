@@ -2,16 +2,16 @@
 import { computed, defineComponent, ref, watch } from 'vue'
 import { dialogProps } from './props'
 import VuMark from '../../Mark'
-import useZIndex from '@vu-design/hooks/use-zindex'
-import computedClassName from '@vu-design/hooks/use-class-name'
-import { addUnit } from '@vu-design/utils'
+import useZIndex from '@vu-design-plus/hooks/use-zindex'
+import computedClassName from '@vu-design-plus/hooks/use-class-name'
+import { addUnit } from '@vu-design-plus/utils'
 export default defineComponent({
   name: 'vu-dialog',
-  props: dialogProps,
-  emits: ['update:modelValue', 'on-confirm', 'on-cancel'],
   components: {
     VuMark
   },
+  props: dialogProps,
+  emits: ['update:modelValue', 'on-confirm', 'on-cancel'],
   setup(props, { emit }) {
     const maskZIndex = useZIndex()
     const changeValue = ref<boolean>(false)
@@ -24,7 +24,7 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (value: boolean) => {
-        if (value) changeValue.value = true
+        changeValue.value = value
       }
     )
 
@@ -37,7 +37,6 @@ export default defineComponent({
     // 点击确认回调
     function confirmHandle() {
       emit('on-confirm')
-      commonHandle()
     }
 
     // 点击取消回调
@@ -66,7 +65,7 @@ export default defineComponent({
       <div class="vu-dialog" :style="styles">
         <div :class="computedClass(['header'])">
           <span>{{ title }}</span>
-          <i class="vu-icon vu-icon-close"></i>
+          <i class="vu-icon vu-icon-close" @click="cancelHandle"></i>
         </div>
         <div :class="computedClass(['body'])">
           <slot></slot>
@@ -74,12 +73,12 @@ export default defineComponent({
         <div :class="computedClass(['footer'])">
           <button
             class="cancel"
-            @click="confirmHandle"
+            @click="cancelHandle"
             v-show="existBtns.includes('cancel')"
           >
             {{ cancelText }}
           </button>
-          <button v-show="existBtns.includes('confirm')" @click="cancelHandle">
+          <button v-show="existBtns.includes('confirm')" @click="confirmHandle">
             {{ confirmText }}
           </button>
         </div>

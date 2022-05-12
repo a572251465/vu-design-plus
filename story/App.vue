@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VuMessage, VuMessageBox, VuDialog } from '@vu-design/components'
+import { VuMessage, VuMessageBox, VuDialog } from '@vu-design-plus/components'
 import { ref } from 'vue'
 const btns = ['success', 'danger']
 const dialogShowFlag = ref<boolean>(false)
@@ -29,6 +29,10 @@ const messageBoxHandle1 = () => {
     `)()
   })
 }
+
+const successCallback = () => {
+  alert('成功回调')
+}
 </script>
 
 <template>
@@ -55,7 +59,7 @@ const messageBoxHandle1 = () => {
     </div>
     <h1>dialog实现</h1>
     <button @click="openDialog">点击打开dialog</button>
-    <VuDialog v-model="dialogShowFlag" title="新建部门">11111</VuDialog>
+    <VuDialog v-model="dialogShowFlag" title="新建部门" @on-confirm = "successCallback">11111</VuDialog>
   </div>
 </template>
 

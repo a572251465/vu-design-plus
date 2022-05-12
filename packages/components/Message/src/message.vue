@@ -8,10 +8,10 @@ import {
   ref
 } from 'vue'
 import { messageProps } from './messageProps'
-import { useNamespace } from '@vu-design/hooks'
-import { addUnit, styleCommonPrefix } from '@vu-design/utils'
-import useZIndex from '@vu-design/hooks/use-zindex'
-import computedClassName from '@vu-design/hooks/use-class-name'
+import { useNamespace } from '@vu-design-plus/hooks'
+import { addUnit, styleCommonPrefix } from '@vu-design-plus/utils'
+import useZIndex from '@vu-design-plus/hooks/use-zindex'
+import computedClassName from '@vu-design-plus/hooks/use-class-name'
 
 export default defineComponent({
   name: 'VuMessage',

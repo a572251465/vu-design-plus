@@ -3,7 +3,7 @@
  * @description 全局控制workspace
  * @param type 表示workspace 類型
  */
-import { namespace } from "@vu-design/utils"
+import { namespace } from "@vu-design-plus/utils"
 
 /**
  * @author lihh

@@ -46,10 +46,10 @@
     "vue": "^3.2.31"
   },
   "dependencies": {
-    "@vu-design/components": "workspace:^1.0.0",
-    "@vu-design/hooks": "workspace:^1.0.0",
-    "@vu-design/theme-chalk": "workspace:^1.0.0",
-    "@vu-design/utils": "workspace:^1.0.0"
+    "@vu-design-plus/components": "workspace:^1.0.0",
+    "@vu-design-plus/hooks": "workspace:^1.0.0",
+    "@vu-design-plus/theme-chalk": "workspace:^1.0.0",
+    "@vu-design-plus/utils": "workspace:^1.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx,vue}": "eslint --cache --fix"

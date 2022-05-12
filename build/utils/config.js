@@ -12,7 +12,7 @@ const buildConfig = {
       path: path.resolve(outDir, 'es')
     },
     bundle: {
-      path: `vu-design/es`
+      path: `vu-design-plus/es`
     }
   },
 
@@ -25,7 +25,7 @@ const buildConfig = {
       path: path.resolve(outDir, 'lib')
     },
     bundle: {
-      path: 'vu-design/lib'
+      path: 'vu-design-plus/lib'
     }
   }
 }

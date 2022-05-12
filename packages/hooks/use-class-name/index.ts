@@ -1,4 +1,4 @@
-import { styleCommonPrefix } from '@vu-design/utils'
+import { styleCommonPrefix } from '@vu-design-plus/utils'
 
 /**
  * @author lihh

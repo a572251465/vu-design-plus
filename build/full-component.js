@@ -57,7 +57,7 @@ const buildEntry = async () => {
   const config = {
     input: entryPoints,
     plugins: [nodeResolve(), vue(), typescript()],
-    external: (id) => /^vue/.test(id) || /^@vu-design/.test(id)
+    external: (id) => /^vue/.test(id) || /^@vu-design-plus/.test(id)
   }
 
   const bundle = await rollup(config)

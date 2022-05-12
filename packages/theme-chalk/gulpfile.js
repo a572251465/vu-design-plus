@@ -2,7 +2,6 @@ const gulpSass = require('gulp-sass')
 const dartSass = require('sass')
 const { series, src, dest } = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
-const cleanCSS = require('gulp-clean-css')
 const path = require('path')
 const through2 = require('through2')
 const File = require('vinyl')
@@ -17,7 +16,7 @@ const compile = () => {
 
   // 替换内容函数
   const replaceFn = () => (id) => {
-    id = id.replace(/fonts\/iconfont/g, `vu-design/theme-chalk/fonts/iconfont`)
+    id = id.replace(/fonts\/iconfont/g, `vu-design-plus/theme-chalk/fonts/iconfont`)
     return id
   }
   return src(path.resolve(__dirname, './src/*.scss'))

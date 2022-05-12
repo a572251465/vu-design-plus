@@ -52,7 +52,7 @@ const genEntryTypes = async () => {
       await fs.mkdir(path.dirname(filepath), { recursive: true })
       await fs.writeFile(
         filepath,
-        outputFile.getText().replace(/@vu-design/g, '.'),
+        outputFile.getText().replace(/@vu-design-plus/g, '.'),
         'utf8'
       )
     }

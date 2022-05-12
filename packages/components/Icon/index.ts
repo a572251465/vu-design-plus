@@ -1,4 +1,4 @@
-import { withInstall } from '@vu-design/utils/types'
+import { withInstall } from '@vu-design-plus/utils/types'
 import Icon from './src/icon.vue'
 
 export * from './src/iconProp'
