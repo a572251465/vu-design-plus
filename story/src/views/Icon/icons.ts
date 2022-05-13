@@ -1,3 +1,5 @@
+import { IFields } from '@/components/TableProps/types'
+
 const icons: string[] = [
   'caidan',
   'jiazai',
@@ -83,5 +85,28 @@ const icons: string[] = [
   'yooxi',
   'jinggao'
 ]
+
+const iconFields: IFields[] = [
+  {
+    field: 'size',
+    desc: '表示icon大小',
+    type: '[Number, String]',
+    defaultValue: '16'
+  },
+  {
+    field: 'color',
+    desc: '表示icon颜色',
+    type: 'String',
+    defaultValue: 'black'
+  },
+  {
+    field: 'type',
+    desc: '表示icon类型',
+    type: 'String',
+    defaultValue: '-'
+  }
+]
+
+export { iconFields }
 
 export default icons

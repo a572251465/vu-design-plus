@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import logo from '@/assets/img/logo.png'
-import { reactive, ref } from 'vue'
+import { reactive, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 // 导航列表
 const navList = reactive<{ introduce: string; label: string; path: string }[]>([
@@ -32,6 +33,29 @@ const navList = reactive<{ introduce: string; label: string; path: string }[]>([
 ])
 // 表示激活的nav
 const activeNav = ref<string>('introduce')
+// 表示路由信息
+const router = useRouter()
+const route = useRoute()
+// 监听路由变化
+watch(
+  () => route.fullPath,
+  (value: string) => {
+    const path = value.slice(1)
+    const paths = navList.map((item) => item.path)
+
+    if (!paths.includes(path)) return
+    activeNav.value = path
+  }
+)
+
+/**
+ * @author lihh
+ * @description 跳转路径
+ * @param path 跳转到path
+ */
+const skipPath = (path: string) => {
+  router.push({ path: `/${path}` })
+}
 </script>
 
 <template>
@@ -57,6 +81,7 @@ const activeNav = ref<string>('introduce')
             v-for="(item, index) in navList"
             :key="index"
             :class="activeNav === item.path ? 'active' : ''"
+            @click="skipPath(item.path)"
           >
             <span>{{ item.introduce }}</span>
             <span>{{ item.label }}</span>
