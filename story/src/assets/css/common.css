@@ -13,3 +13,45 @@ body,
 .home {
   height: 100%;
 }
+
+[class$='-demo'] h2 {
+  color: #409eff;
+  text-decoration: underline;
+}
+
+[class$='-demo'] p {
+  font-size: 14px;
+}
+
+[class$='-demo'] button {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  background: #0b71e6;
+  font-size: 12px;
+  color: #ffffff;
+  margin: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+[class$='-demo'] button:active {
+  background: #cccc;
+}
+
+[class$='-demo'] .code {
+  background: rgba(45, 45, 45, 0.8);
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 13px;
+  color: #7ec699;
+  width: 90%;
+  border-radius: 4px;
+}
+
+[class$='-demo'] .code div {
+  margin-bottom: 10px;
+}
