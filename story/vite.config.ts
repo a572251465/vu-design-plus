@@ -10,14 +10,14 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [jsx(), vue()],
-  // base: '/vu-design-plus',
+  base: '/vu-design-plus',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
   },
   build: {
-    outDir: path.resolve(__dirname, 'docs'),
+    outDir: path.resolve(__dirname, './docs'),
     sourcemap: true
   }
 })
