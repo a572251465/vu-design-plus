@@ -48,7 +48,8 @@ export type IMessageBoxProps = ExtractPropTypes<typeof messageBoxProps>
 export interface IOptions {
   (
     message: string | Partial<IMessageBoxProps>,
-    options?: Partial<IMessageBoxProps>
+    options?: Partial<IMessageBoxProps>,
+    isDel?: boolean
   ): any
 }
 

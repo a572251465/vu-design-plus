@@ -36,6 +36,12 @@ const dialogProps: IFields[] = [
     type: 'String',
     desc: '取消按钮内容',
     defaultValue: '取消'
+  },
+  {
+    field: 'on-confirm',
+    type: 'Click',
+    desc: '点击确认后回调事件',
+    defaultValue: '-'
   }
 ]
 

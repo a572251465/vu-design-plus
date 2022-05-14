@@ -11,7 +11,7 @@ let messageBoxId = 0
 const cacheMessageBoxInstance: ICacheMessageBoxInstance = {}
 
 const MessageBox: IOptions = (message, options = {}, isDel) => {
-  options.message = message
+  options = { ...options, message: message as any }
 
   messageBoxId += 1
   const currentMessageBoxId = messageBoxId
@@ -64,4 +64,4 @@ const MessageBox: IOptions = (message, options = {}, isDel) => {
   }
 })
 
-export default messageBox as IMessageBoxInstance
+export default messageBox as any as IMessageBoxInstance

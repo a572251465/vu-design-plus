@@ -27,7 +27,7 @@ const buildFull = async () => {
     {
       format: 'umd',
       file: path.resolve(outDir, 'index.js'),
-      name: 'VuDesign',
+      name: 'VuDesignPlus',
       exports: 'named',
       globals: {
         vue: 'Vue'

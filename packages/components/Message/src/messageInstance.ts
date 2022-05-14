@@ -105,4 +105,4 @@ const messageInstance: IMessage = (options) => {
   }
 })
 
-export default messageInstance as IMessageOptions
+export default messageInstance as any as IMessageOptions

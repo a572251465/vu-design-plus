@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import icons, { iconFields } from './icons'
-import { VuMessage } from '@vu-design-plus/components'
+import { VuMessage, VuIcon } from 'vu-design-plus'
 import TableProps from '@/components/TableProps/index.vue'
 
 /**
@@ -19,7 +19,7 @@ const clickIcon = (iconName: string) => {
     <h3>图标集合</h3>
     <ul>
       <li v-for="item in icons" :key="item" @click="clickIcon(item)">
-        <vu-icon :type="item"></vu-icon>
+        <VuIcon :type="item"></VuIcon>
         <span>{{ `vu-icon-${item}` }}</span>
       </li>
     </ul>

@@ -1,8 +1,7 @@
 import { withInstall } from '@vu-design-plus/utils/types'
-import Icon from './src/icon.vue'
+import Icon from './src/index.vue'
 
-export * from './src/iconProp'
-const VuIcon = withInstall({ ...Icon, name: 'VuIcon' })
+const VuIcon = withInstall(Icon)
 
-export { VuIcon }
 export default VuIcon
+export * from './src/props'

@@ -22,11 +22,12 @@
     "strict": true, // 是否启动严格模式
     "skipLibCheck": true // 跳过类库检测
   },
-  "include": ["image.d.ts"],
+  "include": ["image.d.ts", "packages", "typings"],
   "exclude": [
     // 排除掉哪些类库
     "node_modules",
     "**/__tests__",
-    "dist/**"
+    "dist/**",
+    "story/**"
   ]
 }

@@ -16,7 +16,8 @@
       <ul>
         <li>
           <vu-icon type="star-on" :color="randomBk()"></vu-icon>
-          优锘科技森大屏产品专用组件库, 定制化程度高，以黑色主题为主，已上生产放心使用
+          优锘科技离线版森大屏产品专用组件库,
+          定制化程度高，以黑色主题为主，已上生产放心使用
         </li>
         <li>
           <vu-icon type="star-on" :color="randomBk()"></vu-icon>所有组件基于

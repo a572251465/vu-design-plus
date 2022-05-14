@@ -23,7 +23,11 @@ body,
   font-size: 14px;
 }
 
-[class$='-demo'] button {
+.flex {
+  display: flex;
+}
+
+[class$='-demo'] .btns {
   width: 140px;
   height: 40px;
   line-height: 40px;
@@ -38,7 +42,7 @@ body,
   cursor: pointer;
 }
 
-[class$='-demo'] button:active {
+[class$='-demo'] .btns:active {
   background: #cccc;
 }
 

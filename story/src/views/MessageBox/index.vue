@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VuMessage, VuMessageBox } from '@vu-design-plus/components'
+import { VuMessage, VuMessageBox } from 'vu-design-plus'
 import TableProps from '@/components/TableProps/index.vue'
 import { messageBoxFields } from './messageBox'
 
@@ -32,11 +32,11 @@ const selfDeleteCallback = () => {
     <h2>MessageBox 消息确认提示提示</h2>
     <p>专门为做某些事情之前设置的指令，分为删除以及确认状态</p>
     <h3>实例效果</h3>
-    <div>
-      <button @click="confirmCallback">点击确认</button>
-      <button @click="deleteCallback">点击删除</button>
-      <button @click="selfConfirmCallback">自定义模板 点击确认</button>
-      <button @click="selfDeleteCallback">自定义模板 点击删除</button>
+    <div class="flex">
+      <div class="btns" @click="confirmCallback">点击确认</div>
+      <div class="btns" @click="deleteCallback">点击删除</div>
+      <div class="btns" @click="selfConfirmCallback">自定义模板 点击确认</div>
+      <div class="btns" @click="selfDeleteCallback">自定义模板 点击删除</div>
     </div>
     <h3>提示</h3>
     <div class="tips-block">
