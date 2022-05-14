@@ -24,7 +24,7 @@ body,
 }
 
 [class$='-demo'] button {
-  width: 100px;
+  width: 140px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -44,7 +44,7 @@ body,
 
 [class$='-demo'] .code {
   background: rgba(45, 45, 45, 0.8);
-  box-sizing: border-box;
+  box-sizing: content-box;
   padding: 20px;
   font-size: 13px;
   color: #7ec699;
@@ -54,4 +54,24 @@ body,
 
 [class$='-demo'] .code div {
   margin-bottom: 10px;
+}
+
+[class$='-demo'] .tips-block {
+  padding: 8px 16px;
+  background-color: rgba(64, 158, 255, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  border-left: 5px solid #409eff;
+  margin: 20px 0;
+  width: 90%;
+}
+
+[class$='-demo'] .tips-block li {
+  margin: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
 }

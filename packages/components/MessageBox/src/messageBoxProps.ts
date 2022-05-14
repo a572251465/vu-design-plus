@@ -1,5 +1,9 @@
 import { ExtractPropTypes } from 'vue'
 
+type Partial<T> = {
+  [K in keyof T]?: T[K]
+}
+
 export const messageBoxProps = {
   title: {
     type: String,
@@ -41,9 +45,14 @@ export interface ICacheMessageBoxInstance<T = { el: HTMLDivElement }> {
 
 export type IMessageBoxProps = ExtractPropTypes<typeof messageBoxProps>
 
-export interface IAlert {
-  (message: string, title: string, options: Partial<IMessageBoxProps>, isDel: boolean): void
+export interface IOptions {
+  (
+    message: string | Partial<IMessageBoxProps>,
+    options?: Partial<IMessageBoxProps>
+  ): any
 }
+
 export interface IMessageBoxInstance {
-  alert?: IAlert
+  delete: IOptions
+  danger: IOptions
 }

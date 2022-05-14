@@ -1,14 +1,17 @@
 import { createVNode, nextTick, render } from 'vue'
 import messageBoxInstance from './messageBox.vue'
-import { IAlert, ICacheMessageBoxInstance } from './messageBoxProps'
+import {
+  IOptions,
+  ICacheMessageBoxInstance,
+  IMessageBoxInstance
+} from './messageBoxProps'
 import messageBox from './messageBox.vue'
 
 let messageBoxId = 0
 const cacheMessageBoxInstance: ICacheMessageBoxInstance = {}
 
-const MessageBox: IAlert = (message, title, options = {}, isDel) => {
+const MessageBox: IOptions = (message, options = {}, isDel) => {
   options.message = message
-  options.title = title
 
   messageBoxId += 1
   const currentMessageBoxId = messageBoxId
@@ -46,15 +49,19 @@ const MessageBox: IAlert = (message, title, options = {}, isDel) => {
 
 // ------------------------- 单独设置alert属性 ----------------------
 ;(['danger', 'delete'] as const).forEach((classify) => {
-  messageBox[classify] = function (message, title, options = {}) {
+  /**
+   * @desc 展示不同的表现形式
+   * VuMessageBox.delete('确定删除吗', {callback})
+   * VuMessageBox.delete({htmlTpl: '确定删除吗?', callback})
+   */
+  messageBox[classify] = function (message, options = {}) {
     // 如果htmlTpl 存在的话 message可以不存在
-    if (title && typeof title === 'object') {
-      options = title
-      title = message
+    if (message && typeof message === 'object') {
+      options = message
       message = ''
     }
-    return MessageBox(message, title, options, classify === 'delete')
+    return MessageBox(message, options, classify === 'delete')
   }
 })
 
-export default messageBox
+export default messageBox as IMessageBoxInstance

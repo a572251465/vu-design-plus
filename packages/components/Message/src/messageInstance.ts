@@ -1,4 +1,9 @@
-import { IMessage, IMessageQueue, ITransformOptions } from './messageProps'
+import {
+  IMessage,
+  IMessageQueue,
+  ITransformOptions,
+  IMessageOptions
+} from './messageProps'
 import { createVNode, nextTick, render } from 'vue'
 import instance from './message.vue'
 
@@ -100,4 +105,4 @@ const messageInstance: IMessage = (options) => {
   }
 })
 
-export default messageInstance
+export default messageInstance as IMessageOptions

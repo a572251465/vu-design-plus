@@ -63,3 +63,8 @@ export type IMessageQueue = {
   id: number
   height: 0
 }
+
+export interface IMessageOptions {
+  danger: (message: string | ITransformOptions) => any
+  success: (message: string | ITransformOptions) => any
+}
