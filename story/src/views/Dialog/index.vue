@@ -1,0 +1,35 @@
+<script lang="ts" setup>
+import { VuDialog, VuMessage } from '@vu-design-plus/components'
+import { ref } from 'vue'
+import TableProps from '@/components/TableProps/index.vue'
+import { dialogProps } from './dialog'
+
+// 弹框显示隐藏
+const showFlag = ref<boolean>(false)
+
+const clickCallback = () => {
+  showFlag.value = true
+}
+
+const confirmCallback = () => {
+  VuMessage.success('点击确认')
+  showFlag.value = false
+}
+</script>
+
+<template>
+  <div class="dialog-demo">
+    <h2>Dialog 内容弹框</h2>
+    <p>在保留当前页面状态的情况下，告知用户并承载相关操作。</p>
+    <h3>实例效果</h3>
+    <button @click="clickCallback">点击弹框</button>
+    <h3>Dialog Props</h3>
+    <TableProps :component-props="dialogProps"></TableProps>
+  </div>
+
+  <VuDialog title="弹框标题" v-model="showFlag" @on-confirm="confirmCallback">
+    <span class="red">这是弹框内容</span>
+  </VuDialog>
+</template>
+
+<style lang="scss" scoped></style>

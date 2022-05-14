@@ -4,13 +4,15 @@ import Introduce from '@/views/Introduce/index.vue'
 import Icon from '@/views/Icon/index.vue'
 import Message from '@/views/Message/index.vue'
 import MessageBox from '@/views/MessageBox/index.vue'
+import Dialog from '@/views/Dialog/index.vue'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: Introduce },
   { path: '/introduce', component: Introduce },
   { path: '/icon', component: Icon },
   { path: '/message', component: Message },
-  { path: '/messageBox', component: MessageBox }
+  { path: '/messageBox', component: MessageBox },
+  { path: '/dialog', component: Dialog }
 ]
 
 // 创建router 路由
