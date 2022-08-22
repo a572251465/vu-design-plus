@@ -61,7 +61,12 @@ export default defineComponent({
 
 <template>
   <transition name="vu-dialog-fade">
-    <VuMark :z-index="maskZIndex" v-show="changeValue" :center="true">
+    <VuMark
+      :z-index="maskZIndex"
+      @closeHandle="cancelHandle"
+      v-show="changeValue"
+      :center="true"
+    >
       <div class="vu-dialog" :style="styles">
         <div :class="computedClass(['header'])">
           <span>{{ title }}</span>
