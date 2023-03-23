@@ -91,7 +91,7 @@ const messageInstance: IMessage = (options) => {
 }
 
 // --------------------- 循环赋值渲染 success, danger 组件 -------------------
-;(['success', 'danger'] as const).forEach((classify) => {
+;(['success', 'danger', 'warning'] as const).forEach((classify) => {
   messageInstance[classify] = function (options: ITransformOptions | string) {
     if (typeof options === 'string') {
       options = {

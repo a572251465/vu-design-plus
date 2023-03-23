@@ -6,6 +6,7 @@ import { messageFields } from './message'
 const successCallback = () => VuMessage.success('我成功了')
 
 const failCallback = () => VuMessage.danger('我失败了')
+const warningCallback = () => VuMessage.warning("我被警告了");
 </script>
 
 <template>
@@ -18,12 +19,14 @@ const failCallback = () => VuMessage.danger('我失败了')
     <div class="flex">
       <div class="btns" @click="successCallback">点我成功</div>
       <div class="btns" @click="failCallback">点我失败</div>
+      <div class="btns" @click="warningCallback">点击警告</div>
     </div>
     <h3>代码示例</h3>
     <div class="code">
       <div>import {VuMessage} from 'vu-design-plus'</div>
       <div>const successCallback = () => VuMessage.success('我成功了')</div>
       <div>const successCallback = () => VuMessage.danger('我失败了')</div>
+      <div>const warningCallback = () => VuMessage.warning('我失败了')</div>
     </div>
     <h3>Message Props</h3>
     <TableProps :component-props="messageFields"></TableProps>

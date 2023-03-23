@@ -16,21 +16,8 @@
       <ul>
         <li>
           <vu-icon type="star-on" :color="randomBk()"></vu-icon>
-          优锘科技离线版森大屏产品专用组件库,
+          离线版森大屏产品专用组件库,
           定制化程度高，以黑色主题为主，已上生产放心使用
-        </li>
-        <li>
-          <vu-icon type="star-on" :color="randomBk()"></vu-icon>所有组件基于
-          <span>typescript</span> ,<span>CompositionAPI</span>
-          以及
-          <span>tsx</span>
-          开发。是Vuetypescript爱好者绝佳学习对象。如果你希望使用tsx开发高质量的Vue组件，那么强烈推荐尝试基于
-          <span>Viewer-Design</span> 的组件来封装
-        </li>
-        <li>
-          <vu-icon type="star-on" :color="randomBk()"></vu-icon
-          >支持组件按需引入，支持图标按需加载，组件库使用了 <span>pnpm</span> +
-          <span>monorepo</span>
         </li>
       </ul>
     </div>
