@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { VuDialog, VuMessage } from 'vu-design-plus'
+import { VuMessage } from 'vu-design-plus'
 import { ref } from 'vue'
 import TableProps from '@/components/TableProps/index.vue'
 import { dialogProps } from './dialog'
+import {VuDialog} from "@vu-design-plus/components";
 
 // 弹框显示隐藏
 const showFlag = ref<boolean>(false)

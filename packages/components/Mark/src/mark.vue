@@ -1,5 +1,5 @@
 <template>
-  <div class="vu-mask" :style="styles" :class="classes" @click="closeHandle">
+  <div class="vu-mask" :style="styles" :class="classes" @click.stop="closeHandle">
     <slot></slot>
   </div>
 </template>

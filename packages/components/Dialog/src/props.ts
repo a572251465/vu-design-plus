@@ -13,6 +13,10 @@ const dialogProps = {
     type: Array as PropType<string[]>,
     default: ['cancel', 'confirm']
   },
+  closeOnClickModal: {
+    type: Boolean,
+    default: false
+  },
   width: {
     type: [Number, String],
     default: 400

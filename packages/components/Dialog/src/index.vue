@@ -45,6 +45,11 @@ export default defineComponent({
       commonHandle()
     }
 
+    // 点击mark关闭
+    function markCancelHandle() {
+      if (props.closeOnClickModal) cancelHandle()
+    }
+
     return {
       maskZIndex,
       changeValue,
@@ -53,7 +58,8 @@ export default defineComponent({
       cancelText,
       computedClass: computedClassName('vu-dialog'),
       confirmHandle,
-      cancelHandle
+      cancelHandle,
+      markCancelHandle
     }
   }
 })
@@ -63,11 +69,11 @@ export default defineComponent({
   <transition name="vu-dialog-fade">
     <VuMark
       :z-index="maskZIndex"
-      @closeHandle="cancelHandle"
+      @closeHandle="markCancelHandle"
       v-show="changeValue"
       :center="true"
     >
-      <div class="vu-dialog" :style="styles">
+      <div class="vu-dialog" :style="styles" @click.stop="() => {}">
         <div :class="computedClass(['header'])">
           <span>{{ title }}</span>
           <i class="vu-icon vu-icon-close" @click="cancelHandle"></i>
